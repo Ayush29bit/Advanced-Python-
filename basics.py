@@ -1,4 +1,4 @@
-"""str = " hello world "
+str = " hello world "
 print(str)
 
 print(7)
@@ -11,7 +11,7 @@ print("hello", 4, 543.3, False, sep=" / ")
 
 print("hello", end="-")
 print("world")
-"""
+
 # User Input
 
 name = input("Enter your name: ")
@@ -21,3 +21,15 @@ a = input("Enter first number: ")
 b = input("Enter second number: ")
 sum = int(a) + int(b)
 print("The sum is:", sum)
+
+
+# TYPE CONVERSION
+
+#implicit type conversion
+print(5+5.6)
+
+#explicit type conversion
+
+a=4.3
+
+print(int(a))
