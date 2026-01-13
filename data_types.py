@@ -45,3 +45,21 @@ print({1, 2, 3, 4, 5})
 print(type({1, 2, 3, 4, 5}))
 print({"apple", "banana", "cherry"})
 print({1, "hello", 3.14, True})
+
+# Dynamic typing example
+var1 = 10
+print(var1)
+
+var2 = "Now I'm a string"
+print(var2)
+
+var3 = 3.14
+print(var3)
+
+# Dyanmic Binding
+
+var=42
+print(var)
+
+var="Now I'm a string"
+print(var)
