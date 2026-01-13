@@ -27,3 +27,21 @@ print([1,2,3,4,5])
 print(type([1,2,3,4,5]))
 print(["apple", "banana", "cherry"])
 print([1, "hello", 3.14, True])
+
+# TUPLES
+print((1,2,3))
+print(type((1,2,3)))
+print(("apple", "banana", "cherry"))
+print((1, "hello", 3.14, False))
+
+# DICTIONARIES
+print({"name": "Alice", "age": 30})
+print(type({"name": "Alice", "age": 30}))
+print({"fruit": "apple", "quantity": 5, "price": 0.99})
+print({"is_student": False, "grades": [90, 85, 88]})
+
+# SETS
+print({1, 2, 3, 4, 5})
+print(type({1, 2, 3, 4, 5}))
+print({"apple", "banana", "cherry"})
+print({1, "hello", 3.14, True})
