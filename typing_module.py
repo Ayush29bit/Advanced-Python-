@@ -44,3 +44,87 @@ def greet_user(user: User):
     print(f"Hello, {user.name}! Your email is {user.email}.")
 
 greet_user(User(id=1, name="Alice", email="alice@example.com"))
+
+"""
+In this example, we define a NamedTuple called User,
+ which has three fields: id (integer), name (string), and email (string).
+"""
+
+#TypedDict
+from typing import TypedDict
+
+class Product(TypedDict):
+    id: int
+    name: str
+    price: float
+
+def print_product(product: Product):
+    print(f"Product ID: {product['id']}, Name: {product['name']}, Price: ${product['price']}")
+
+"""
+In this example, we define a TypedDict called Product,
+which specifies that each product should have an id (integer), name (string), and price (float).
+The print_product function takes a Product object and prints its details.
+The typing module allows us to ensure that the data passed to the function is valid according to the expected structure, making our code more robust and easier to understand.
+"""
+
+# TypedVar
+
+from typing import TypedVar
+T = TypedVar("T")
+
+def identity(value: T) -> T:
+    return value
+
+from typing import Dict, Union
+
+UserData = Dict[str, Union[str, int]]
+
+def format_user(user: UserData) -> str:
+   
+   return f"{user['name']} is {user['age']} years old"
+
+format_user({"name": "Charlie", "age": 40})
+
+#CALLABLE 
+
+"""
+Example : An order processing system where you want to apply discounts to products
+"""
+
+from typing import Callable, NewType
+
+OrderID = NewType('OrderID', int)
+def apply_discount(price: float, discount_func: Callable[[float], float]) -> float:
+    return discount_func(price)
+
+def process_order(order_id: OrderID, price: float, discount_func: Callable[[float], float]) -> str:
+    return apply_discount(price, discount_func)
+
+"""
+This example shows how to use NewType
+to create a type for order IDs and Callable to define a flexible function signature for discounts.
+"""
+
+# Protocols 
+
+from typing import Protocol
+
+class Greeter(Protocol):
+    def greet(self) -> str:
+        ...
+
+class FriendlyGreeter:
+    def greet(self) -> str:
+        return "Hello! Friend"
+    
+def welcome(greeter: Greeter) -> str:
+    return greeter.greet()
+
+welcome = FriendlyGreeter()
+print(welcome(welcome))
+
+"""
+
+"""
+
