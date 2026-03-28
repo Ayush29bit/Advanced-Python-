@@ -38,3 +38,14 @@ asyncio.run(main())
 Total time ≈ 2 seconds
 Both tasks run concurrently (not parallel, but overlapping)
 """
+
+"""
+Related terms 
+
+Parallelism : executing multiple operations at the same time
+Multiprocessing : way of acheiving parallelism by spreading tasks over a computer's CPU
+Concurrency : Multiple tasks having the ability to run in overlapping manner
+Threading : Concurrent execution model in which multiple threads take turns executing tasks
+"""
+
+
