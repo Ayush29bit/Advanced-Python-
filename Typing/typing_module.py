@@ -73,7 +73,7 @@ The typing module allows us to ensure that the data passed to the function is va
 from typing import TypedVar
 T = TypedVar("T")
 
-def identity(value: T) -> T:
+def identity(value:T) -> T:
     return value
 
 from typing import Dict, Union
