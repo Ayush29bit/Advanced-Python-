@@ -46,3 +46,44 @@ class Person:
     def __str__(self):
         return f"{self.name} is {self.age} years old"
 
+"""
+When you call the repr() function on an object, python call the __repr__() method 
+and the output of __repr__() should be a string that can be used to recreate the object.
+"""
+
+class Person:
+
+    def __repr__(self):
+        return f"{type(self).__name__}(name='{self.name}', age={self.age})"
+
+"""
+Operator overloading is the ability to define how operators work with your objects.
+For example, you can define how the + operator works with your objects by implementing the __add__() method.
+"""
+"""
++	.__add__(self, other)
+-	.__sub__(self, other)
+*	.__mul__(self, other)
+/	.__truediv__(self, other)
+//	.__floordiv__(self, other)
+%	.__mod__(self, other)
+**	.__pow__(self, other[, modulo])
+"""
+class Storage(float):
+    def __new__(cls, value, unit):
+        instance = super().__new__(cls, value)
+        instance.unit = unit
+        return instance
+
+    def __add__(self, other):
+        if not isinstance(other, type(self)):
+            raise TypeError(
+                "unsupported operand for +: "
+                f"'{type(self).__name__}' and '{type(other).__name__}'"
+            )
+        if not self.unit == other.unit:
+            raise TypeError(
+                f"incompatible units: '{self.unit}' and '{other.unit}'"
+            )
+
+        return type(self)(super().__add__(other), self.unit)
