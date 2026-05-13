@@ -80,3 +80,22 @@ async def g():
     return result
     
 """
+
+import asyncio
+
+async def fetch_data(url):
+    print(f"Fetching {url}")
+    await asyncio.sleep(1)  # Simulates network delay
+    return f"Data from {url}"
+
+async def main():
+    # Start all I/O simultaneously, then wait
+    tasks = [
+        asyncio.create_task(fetch_data("api1.com")),
+        asyncio.create_task(fetch_data("api2.com")),
+        asyncio.create_task(fetch_data("api3.com"))
+    ]
+    results = await asyncio.gather(*tasks)
+    print(results)
+
+asyncio.run(main())
