@@ -33,6 +33,10 @@ Pydnatic also supports more complex data types, such as lists and dictionaries.
 In the Cart model, we have a list of items and a dictionary that maps item names to their quantities.
 The BlogPost model includes an optional field for an image URL, which can be None if not provided."""
 
-     
+class Employee(BaseModel):
+    id:int 
+    name:str=Field(..., min_length=3) # The ... indicates that this field is required, and min_length=1 ensures that the name cannot be an empty string.
+    salary:float=Field(...,ge=10000)
+    department:Optional[str]
 
 
