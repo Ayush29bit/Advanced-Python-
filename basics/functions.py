@@ -25,3 +25,22 @@ coming should be stored in a tuple
 def tea_order(customer_name,tea_type,*args):
     print(customer_name, "ordered a cup of", tea_type, "and")
     print("args contains", args)
+    for arg in args:
+        print("Add:",arg)
+
+tea_order("Ayush","CHAI","hONEY","MAGGIE")
+
+
+"""
+**kwargs tell python to take n number of keyword arguments
+and pack them into a dictionary 
+{}
+"""
+
+def tea_order(customer_name,tea_type,**kwargs):
+    print(customer_name, "ordered a cup of", tea_type, "and")
+    print("kwargs contains", kwargs)
+    for kwarg in kwargs:
+        print("Add:",kwarg)
+
+tea_order("Ayush","CHAI",milk="Almond")
