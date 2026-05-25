@@ -40,7 +40,7 @@ and pack them into a dictionary
 def tea_order(customer_name,tea_type,**kwargs):
     print(customer_name, "ordered a cup of", tea_type, "and")
     print("kwargs contains", kwargs)
-    for kwarg in kwargs:
-        print("Add:",kwarg)
+    for key,value in kwargs:
+        print("Add:", key, ":", value)
 
 tea_order("Ayush","CHAI",milk="Almond")
